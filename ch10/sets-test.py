@@ -35,3 +35,20 @@ print 'a ^ b:', a ^ b
 
 print 'a.copy():', a.copy()
 print 'a.copy() is a:', a.copy() is a
+
+
+mySets = []
+for i in range(10):
+    mySets.append(set(range(i, i+5)))
+
+print 'mySets:', mySets
+print 'reduce(set.union, mySets):', reduce(set.union, mySets)
+
+a = set()
+b = set()
+print 'a:', a
+print 'b:', b
+# doesn't work: a.add(b)
+a.add(frozenset(b))
+
+print 'a (with frozenset(b)):', a
